@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: #222;
+    color: #fff;
+}
+
+.glitch {
+    position: absolute;
+    /* this is done inorder to center text
+    to the center of the screen */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    letter-spacing: 8px;
+    cursor: pointer;
+}
+
+.glitch::before,
+.glitch::after {
+    content: "B0l ENGINEERING";
+    display: block;
+    /* positioned relative to the
+    nearest positioned parent element */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.glitch:hover::before {
+    animation: glitch 0.3s linear 6;
+    color: #e91e63;
+    /* it will be behind the main text */
+    z-index: -2;
+}
+
+.glitch:hover::after {
+    animation: glitch 0.3s linear 6 reverse;
+    color: #2196f3;
+    /* it will be behind the main text */
+    z-index: -1;
+}
+
+@keyframes glitch {
+    0% {
+        top: 0;
+        left: 0;
+    }
+    20% {
+        top: -5px;
+        left: -5px;
+    }
+    40% {
+        top: 5px;
+        left: 5px;
+    }
+    60% {
+        top: -5px;
+        left: 5px;
+    }
+    80% {
+        top: 5px;
+        left: -5px;
+    }
+    100% {
+        top: 0;
+        left: 0;
+    }
+}
